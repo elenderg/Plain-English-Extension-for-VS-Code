@@ -87,14 +87,9 @@
         },
         {
           "name": "variable.parameter.plain",
-          "begin": "(?<=\\b(the|a|an|some)\\b\\s*)([\\wÀ-ÿ_\\-\\'].*?)",
-          "end": "(?=\\s*(?:\\b(a|an|and|another|about|above|across|after|against|all|alone|along|among|any|anywhere|around|as|at|away|back|backward|backwards|before|beginning|behind|below|beneath|beside|between|beyond|bigger|both|but|by|called|close|deep|diagonally|down|downward|either|equal|ending|everywhere|except|finishing|facing|for|forward|from|given|giving|high|in|inside|into|larger|leaning|left|leftward|leftways|like|limiting|long|near|neither|nor|of|off|on|only|onto|or|out|outside|over|past|pointing|returning|right|rightward|rightways|shorter|sideway|sideways|similar|smaller|some|somewhere|slantwise|slantway|slantways|starting|tall|taller|thru|through|throughout|to|toward|towards|under|underneath|until|unto|up|upward|upon|using|via|while|wide|with|within|without|are|be|can|can|could|do|does|is|may|should|was|will|would|has|have|begins|ends|looks|needs|starts)\\b|\"|\\[|\\:|,|\\.|;|\\())|(?=(\\:|;|\\())",
-          "captures": {
-            "1": {
-              "name": "variable.parameter.plain"
-            }
+          "match": "(?<=\\b(the|a|an|another|some)\\b\\s*)([\\wÀ-ÿ_\\-\\'].*?)(?=( a | an | and | another | about | above | across | after | against | all | alone | along | among | any | anywhere | around | as | at | away | back | backward | backwards | before | beginning | behind | below | beneath | beside | between | beyond | bigger | both | but | by | called | close | deep | diagonally | down | downward | either | equal | ending | everywhere | except | finishing | facing | for | forward | from | given | giving | high | in | inside | into | larger | leaning | left | leftward | leftways | like | limiting | long | near | neither | nor | of | off | on | only | onto | or | out | outside | over | past | pointing | returning | right | rightward | rightways | shorter | sideway | sideways | similar | smaller | some | somewhere | slantwise | slantway | slantways | starting | tall | taller | then | thru | through | throughout | to | toward | towards | under | underneath | until | unto | up | upward | upon | using | via | while | wide | with | within | without | are | be | can | can | could | do | does | is | may | should | was | will | would | has | have | begins | ends | looks | needs | starts |\"|\\[|\\:|,|\\.|;|\\()|(?=(\\:|;|\\()))"
           }
-        },
+        ,
         {
           "name": "variable.type.struct.plain",
           "match": "(\\b(?<=(A|An|Some|\\d)\\b\\s+)([\\wÀ-ÿ_\\-].*?)(?=\\s+\\b(called)\\b))"
