@@ -149,7 +149,7 @@
         },
         {
           "name": "keyword.control.punctuation.accessor.plain",
-          "match": "\\b(?i:(à|às|ao|aos|dessa|dessas|desse|desses|desta|destas|deste|destes|dum|duma|dumas|duns|essa|essas|esse|esses|esta|estas|este|estes|na|nas|no|nos|num|numa|numas|nuns|pela|pelas|pelo|pelos))\\b"
+          "match": "\\b(?i:(falta preencher))\\b"
         },
         {
           "name": "keyword.control.adverbios.plain",
