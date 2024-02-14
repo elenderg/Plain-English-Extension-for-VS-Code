@@ -1,65 +1,35 @@
-# plain-english-syntax-highlighter README
+# Plain English Syntax Highlighting for Visual Studio Code
 
-This is the README for your extension "plain-english-syntax-highlighter". After writing up a brief description, we recommend including the following sections.
+![Plain English Logo](plain-english-logo.png)
+
+## Description
+
+This Visual Studio Code extension provides syntax highlighting for the Plain English language, allowing users to write and edit Plain English code with ease directly within the editor.
+
+Plain English is a domain-specific language designed for ease of understanding and readability, created by Gerry Rzeppa and Dan Rzeppa. For more information about Plain English, visit the [official project website](http://www.osmosian.com).
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Syntax highlighting for Plain English language files (*.pe)
+- Improved readability and clarity for Plain English code within Visual Studio Code
+- Seamless integration with other VS Code features and extensions
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+You can install the Plain English Syntax Highlighting extension directly from the Visual Studio Code Marketplace or by searching for "Plain English" in the Extensions view (Ctrl+Shift+X).
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Usage
 
-## Requirements
+Once installed, the extension automatically applies syntax highlighting to any files with the `.pe` extension. Simply open a Plain English file in Visual Studio Code to see the syntax highlighting in action.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Support and Feedback
 
-## Extension Settings
+For support or feedback regarding this extension, please contact us at [help@osmosian.com](mailto:help@osmosian.com). We welcome any suggestions, bug reports, or feature requests.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Additional Resources
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- [Plain English Programming Blog](https://osmosianplainenglishprogramming.blog/): Stay updated with the latest news, tutorials, and articles related to Plain English programming.
 
 ---
 
-## Working with Markdown
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
