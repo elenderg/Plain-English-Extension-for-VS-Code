@@ -10,16 +10,37 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "plain",
-      "aliases": ["Plain English", "plain"],
-      "extensions": [".plain",".pe",".plainenglish",".plain-english","plain_english"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "plain",
-      "scopeName": "source.plain",
-      "path": "./syntaxes/plain.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "plain",
+        "aliases": [
+          "Plain English",
+          "plain"
+        ],
+        "extensions": [
+          ".plain",
+          ".pe",
+          ".plainenglish",
+          ".plain-english",
+          "plain_english"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "plain",
+        "scopeName": "source.plain",
+        "path": "./syntaxes/plain.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@vscode/test-cli": "^0.0.6",
+    "@vscode/test-electron": "^2.3.9"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/elenderg/Plain-English-Extension-for-VS-Code.git"
   }
 }
