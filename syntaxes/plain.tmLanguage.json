@@ -1,0 +1,226 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Plain English",
+  "patterns": [
+    {  "include": "#arguments"     },
+    {  "include": "#constant"      },
+    {  "include": "#comment"       },
+    {  "include": "#entity"        },
+    {  "include": "#function"      },
+    {  "include": "#keyword"       },
+    {  "include": "#meta"          },
+    {  "include": "#numero"        },
+    {  "include": "#operadores"    },
+    {  "include": "#punctuation"   },
+    {  "include": "#strings"       },
+    {  "include": "#support"       },
+    {  "include": "#variable"      }
+  ],
+  "repository": {
+    "comment": {
+      "patterns": [
+        {
+          "match": "(\\[.*?\\])",
+          "name": "comment.block.plain"
+        },
+        {
+          "match": "\\\\(.*)",
+          "name": "comment.line.character.plain"
+        },
+        {
+          "match": "(\\(.*?\\))",
+          "name": "comment.block.documentation.plain"
+        }
+
+      ]
+    },
+    "constant": {
+      "patterns": [
+        {
+          "name": "constant.numeric.integer.decimal.plain",
+          "match": "\\b(-?[\\d]+)\\b"
+        },
+        {
+          "name": "constant.numeric.integer.hexadecimal.plain",
+          "match": "(\\$[a-fA-F\\d]+)"
+        },
+        {
+          "name": "constant.numeric.integer.float.decimal.plain",
+          "match": "\\b(-?[\\d]+\\-[\\d]+/[\\d]+)\\b"
+        },
+        {
+          "name": "constant.language.plain",
+          "match": "\\b(?i:(yes|no|null|nil|blank))\\b"
+        }
+      ]
+    },
+
+    "function": {
+      "patterns": [
+        {
+          "name": "storage.type.function.plain",
+          "match": "\\s*To"
+        },
+        {
+          "name": "entity.name.function.declaration.plain",
+          "begin": "(?<=\\s*To\\s*)",
+          "end": "(?=\\s*\\b(a|an|and|another|about|above|across|after|against|all|alone|along|among|any|anywhere|around|as|at|away|back|backward|backwards|before|beginning|behind|below|beneath|beside|between|beyond|bigger|both|but|by|called|close|deep|diagonally|down|downward|either|equal|ending|everywhere|except|finishing|facing|for|forward|from|given|giving|high|in|inside|into|larger|leaning|left|leftward|leftways|like|limiting|long|near|neither|nor|of|off|on|only|onto|or|out|outside|over|past|pointing|returning|right|rightward|rightways|shorter|sideway|sideways|similar|smaller|some|somewhere|slantwise|slantway|slantways|starting|tall|taller|thru|through|throughout|to|toward|towards|under|underneath|until|unto|up|upward|upon|using|via|while|wide|with|within|without|\\:|;)\\b)|\\:|;",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.declaration.plain"
+            }
+          }
+        },
+        {
+          "name": "entity.name.function.invocation.plain",
+          "begin": "(?!(\\b(The|A|An|Some|Say|Loop|Repeat|loop|repeat|To|If)\\b))[A-Z][a-zÀ-ÿ]*?\\s*[\\wÀ-ÿ ]*?",
+          "end": "(?=\\s(\\-|\\b(\\d+|a|an|and|another|about|above|across|after|against|all|alone|along|among|any|anywhere|around|as|at|away|back|backward|backwards|before|beginning|behind|below|beneath|beside|between|beyond|bigger|both|but|by|called|close|deep|diagonally|down|downward|either|equal|ending|everywhere|except|finishing|facing|for|forward|from|given|giving|high|in|inside|into|larger|leaning|left|leftward|leftways|like|limiting|long|near|neither|nor|of|off|on|only|onto|or|out|outside|over|past|pointing|returning|right|rightward|rightways|shorter|sideway|sideways|similar|smaller|some|somewhere|slantwise|slantway|slantways|starting|tall|taller|the|thru|through|throughout|to|toward|towards|under|underneath|until|unto|up|upward|upon|using|via|while|wide|with|within|without)\\b)|\"|\\.|\\,|;|\\()|(\\$[a-fA-F\\d]+)",
+          "captures": {
+            "0": {
+              "name": "entity.name.function.invocation.plain"
+            }
+          }
+        },
+        {
+          "name": "entity.name.function.invocation.postcomma.plain",
+          "match": "(?<=(,|;))([\\wÀ-ÿ ])([\\wÀ-ÿ ]*?)(?=(\\b(\\d+|a|an|and|another|about|above|across|after|against|all|alone|along|among|any|anywhere|around|as|at|away|back|backward|backwards|before|beginning|behind|below|beneath|beside|between|beyond|bigger|both|but|by|called|close|deep|diagonally|down|downward|either|equal|ending|everywhere|except|finishing|facing|for|forward|from|given|giving|high|in|inside|into|larger|leaning|left|leftward|leftways|like|limiting|long|near|neither|nor|of|off|on|only|onto|or|out|outside|over|past|pointing|returning|right|rightward|rightways|shorter|sideway|sideways|similar|smaller|some|somewhere|slantwise|slantway|slantways|starting|tall|taller|the|thru|through|throughout|to|toward|towards|under|underneath|until|unto|up|upward|upon|using|via|while|wide|with|within|without)\\b|\"|;|\\(|(\\$[a-fA-F\\d]+)))"
+        },
+        {
+          "name": "entity.name.function.struct.member.plain",
+          "match": "(?<=\\b(A|An|Some|(called))\\b\\s+)(?:(?!(called)).)+?(?=\\s*(?:,|\\(|\\[|\\.|\\b(and|or)\\b))"
+        },
+        {
+          "name": "variable.parameter.plain",
+          "match": "(?<=\\b(the|a|an|another|some)\\b\\s*)([\\wÀ-ÿ_\\-\\'].*?)(?=( a | an | and | another | about | above | across | after | against | all | alone | along | among | any | anywhere | around | as | at | away | back | backward | backwards | before | beginning | behind | below | beneath | beside | between | beyond | bigger | both | but | by | called | close | deep | diagonally | down | downward | either | equal | ending | everywhere | except | finishing | facing | for | forward | from | given | giving | high | in | inside | into | larger | leaning | left | leftward | leftways | like | limiting | long | near | neither | nor | of | off | on | only | onto | or | out | outside | over | past | pointing | returning | right | rightward | rightways | shorter | sideway | sideways | similar | smaller | some | somewhere | slantwise | slantway | slantways | starting | tall | taller | then | thru | through | throughout | to | toward | towards | under | underneath | until | unto | up | upward | upon | using | via | while | wide | with | within | without | are | be | can | can | could | do | does | is | may | should | was | will | would | has | have | begins | ends | looks | needs | starts |\"|\\[|\\:|,|\\.|;|\\()|(?=(\\:|;|\\()))"
+          }
+        ,
+        {
+          "name": "variable.type.struct.plain",
+          "match": "(\\b(?<=(A|An|Some|\\d)\\b\\s+)([\\wÀ-ÿ_\\-].*?)(?=\\s+\\b(called)\\b))"
+        },
+        {
+          "name": "markup.italic.plain",
+          "match": "\\b(called)\\b"
+        },
+        {
+          "name": "entity.name.function.condition.plain",
+          "begin": "(?<=\\b(If)\\b\\s+)(?!(\\b(the|a|an|some)\\b))",
+          "end": "(?=,)",
+          "captures": {
+            "3": {
+              "name": "entity.name.function.condition.plain"
+            }
+          }
+        }
+        
+
+      ]
+    },
+    "keyword": {
+      "patterns": [        
+        {
+          "name": "string.other.parameters.begin.plain",
+          "match": "\\b(the|a|an|some|another)\\b"
+        },       
+
+        {
+          "name": "keyword.control.plain",
+          "match": "\\b(?i:(from|if))\\b|\\(reference\\)"
+        },
+        {
+          "name": "keyword.language.articles.definite.plain",
+          "match": "\\b(The)\\b"
+        },
+        {
+          "name": "keyword.language.articles.indefinite.plain",
+          "match": "\\b(A|An|Some)\\b"
+        },
+        {
+          "name": "keyword.control.ajectives.plain",
+          "match": "\\b(?i:(set|nil|original|next|previous|boid))\\b"
+        },
+        {
+          "name": "keyword.control.prepositions.plain",
+          "match": "\\b(?i:(about|above|across|after|against|all|alone|along|among|any|anywhere|around|as|at|away|back|backward|backwards|before|beginning|behind|below|beneath|beside|between|beyond|bigger|by|close|deep|diagonally|down|downward|ending|everywhere|except|finishing|facing|for|forward|from|given|giving|high|in|inside|into|larger|leaning|left|leftward|leftways|like|limiting|long|near|of|off|on|only|onto|out|outside|over|past|pointing|returning|right|rightward|rightways|shorter|sideway|sideways|similar|smaller|somewhere|slantwise|slantway|slantways|starting|tall|taller|thru|through|throughout|to|toward|towards|under|underneath|until|unto|up|upward|upon|using|via|while|wide|with|within|without))\\b"
+        },
+        {
+          "name": "keyword.control.verbs.plain",
+          "match": "\\b(?i:(are|be|can|can|could|do|does|exit|is|may|not|should|was|will|would|has|have|begins|ends|looks|needs|starts|Loop|Repeat|repeat|loop|break|return))\\b"
+        },
+        {
+          "name": "keyword.control.punctuation.accessor.plain",
+          "match": "\\b(?i:(à|às|ao|aos|dessa|dessas|desse|desses|desta|destas|deste|destes|dum|duma|dumas|duns|essa|essas|esse|esses|esta|estas|este|estes|na|nas|no|nos|num|numa|numas|nuns|pela|pelas|pelo|pelos))\\b"
+        },
+        {
+          "name": "keyword.control.adverbios.plain",
+          "match": "\\b(?i:(falta preencher))\\b"
+        },
+        {
+          "name": "keyword.control.substantivos.plain",
+          "match": "\\b(?i:(falta preencher))\\b"
+        },
+        {
+          "name": "keyword.control.operadoresaritmeticos.plain",
+          "match": "\\b(?i:(divided|and|plus|minus|times|neither|or|multiplied))\\b"
+        },
+        {
+          "name": "keyword.other.operadoresdecomparacao.plain",
+          "match": "\\b(?i:(equal to|bigger|lesser))\\b"
+        },
+        {
+          "name": "keyword.other.operadoresdeconcatenacao.plain",
+          "match": "\\b(?i:(then))\\b"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "keyword.punctuation.terminator.plain",
+          "match": "\\;|\\.|\\,|\\:"          
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.plain",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.plain",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "support":{
+      "patterns":[
+        {
+          "name": "support.type.simples.plain",
+          "match": "(\\b(?<=(A|An|Some|The))\\b)\\s+([\\wÀ-ÿ_\\-\\s\/]*)\\s*(?=\\b(is|are)\\b)"
+        },
+        {
+          "name": "support.type.aposcolchete.plain",
+          "match": "((?<=(\\])))\\s+([\\wÀ-ÿ_\\-\\s\/]*)\\s*(?=is|are|has)"
+        },
+        {
+          "name": "support.type.antesdecolchete.plain",
+          "match": "(\\b(?<=(A|An|Some|The))\\b)\\s+([\\wÀ-ÿ_\\-\\s\/]*)\\s*(?=(\\[))(?=\\[.*\\b(is|are|has)\\b)"
+        },
+        {
+          "name": "support.type.entrecolchetes.plain",
+          "match": "(?<=(\\]))\\s*([\\wÀ-ÿ_\\-\\s\/]*)\\s*(?=\\[.*\\b(is|are|has)\\b)"
+        },
+        {
+          "name": "support.struct.plain",
+          "match": "(\\b(?<=(A|An|Some|The))\\b)\\s+([\\wÀ-ÿ_\\-\\s\/]*)\\s*(?=\\b(is a record|has)\\b)"
+        }
+      ]
+    }
+    
+  },
+  "scopeName": "source.plain"
+}

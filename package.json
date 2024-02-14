@@ -1,37 +1,25 @@
 {
-  "name": "portugues-puro",
-  "displayName": "Português Puro",
-  "description": "Realçador de sintaxe para a Linguagem de Programação \"Português Puro\".",
+  "name": "plain-english-syntax-highlighter",
+  "displayName": "Plain English Syntax Highlighter",
+  "description": "Provides syntax highlighting for Plain English Programmin Language (from The Osmosian Order of Plain English Programmers -> www.osmosian.com)",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.85.0"
+    "vscode": "^1.86.0"
   },
   "categories": [
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [
-      {
-        "id": "pop",
-        "aliases": [
-          "PoP",
-          "pop"
-        ],
-        "extensions": [
-          "pop"
-        ],
-        "configuration": "./language-configuration.json"
-      }
-    ],
-    "grammars": [
-      {
-        "language": "pop",
-        "scopeName": "source.escopo.portugues",
-        "path": "./syntaxes/pop.tmLanguage.json"
-      }
-    ]
-  },
-  "devDependencies": {
-    "js-yaml": "^4.1.0"
+    "languages": [{
+      "id": "plain",
+      "aliases": ["Plain English", "plain"],
+      "extensions": [".plain",".pe",".plainenglish",".plain-english","plain_english"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "plain",
+      "scopeName": "source.plain",
+      "path": "./syntaxes/plain.tmLanguage.json"
+    }]
   }
 }

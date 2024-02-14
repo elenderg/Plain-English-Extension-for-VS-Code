@@ -1,6 +1,6 @@
 # Change Log
 
-All notable changes to the "portugues-puro" extension will be documented in this file.
+All notable changes to the "plain-english-syntax-highlighter" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 

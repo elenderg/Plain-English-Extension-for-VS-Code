@@ -1,6 +1,6 @@
-# portugues-puro README
+# plain-english-syntax-highlighter README
 
-This is the README for your extension "portugues-puro". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "plain-english-syntax-highlighter". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
