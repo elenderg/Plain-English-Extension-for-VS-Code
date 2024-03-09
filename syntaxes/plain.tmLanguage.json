@@ -19,7 +19,7 @@
   "repository": {
     "comment": {
       "patterns": [
-        {
+        {          
           "match": "(\\[.*?\\])",
           "name": "comment.block.plain"
         },
@@ -50,7 +50,7 @@
         },
         {
           "name": "constant.language.plain",
-          "match": "\\b(?i:(yes|no|null|nil|blank))\\b"
+          "match": "\\b(?i:(yes|no|null|nil|blank|empty))\\b"
         }
       ]
     },
@@ -73,8 +73,8 @@
         },
         {
           "name": "entity.name.function.invocation.plain",
-          "begin": "(?!(\\b(The|A|An|Some|Say|Loop|Repeat|loop|repeat|To|If)\\b))[A-Z][a-zÀ-ÿ]*?\\s*[\\wÀ-ÿ ]*?",
-          "end": "(?=\\s(\\-|\\b(\\d+|a|an|and|another|about|above|across|after|against|all|alone|along|among|any|anywhere|around|as|at|away|back|backward|backwards|before|beginning|behind|below|beneath|beside|between|beyond|bigger|both|but|by|called|close|deep|diagonally|down|downward|either|equal|ending|everywhere|except|finishing|facing|for|forward|from|given|giving|high|in|inside|into|larger|leaning|left|leftward|leftways|like|limiting|long|near|neither|nor|of|off|on|only|onto|or|out|outside|over|past|pointing|returning|right|rightward|rightways|shorter|sideway|sideways|similar|smaller|some|somewhere|slantwise|slantway|slantways|starting|tall|taller|the|thru|through|throughout|to|toward|towards|under|underneath|until|unto|up|upward|upon|using|via|while|wide|with|within|without)\\b)|\"|\\.|\\,|;|\\()|(\\$[a-fA-F\\d]+)",
+          "begin": "(?!(\\b(The|A|An|Some|Say|Loop|Repeat|loop|repeat|To|If)\\b))[A-Z][a-zÀ-ÿ\\-]*?\\s*[\\wÀ-ÿ\\- ]*?",
+          "end": "(?=\\s(\\-|\\b(\\d+|a|an|and|another|about|above|across|after|against|all|alone|along|among|any|anywhere|around|as|at|away|back|backward|backwards|before|beginning|behind|below|beneath|beside|between|beyond|bigger|both|but|by|called|close|deep|diagonally|down|downward|either|equal|ending|everywhere|except|finishing|facing|for|forward|from|given|giving|high|in|inside|into|larger|leaning|left|leftward|leftways|like|limiting|long|near|neither|nor|of|off|on|only|onto|or|out|outside|over|past|pointing|returning|right|rightward|rightways|shorter|sideway|sideways|similar|smaller|some|somewhere|slantwise|slantway|slantways|starting|tall|taller|the|thru|through|throughout|to|toward|towards|under|underneath|until|unto|up|upward|upon|using|via|while|wide|with|within|without)\\b)|\"|\\.|\\,|;|\\$|\\()|(\\$[a-fA-F\\d]+)",
           "captures": {
             "0": {
               "name": "entity.name.function.invocation.plain"
@@ -83,7 +83,7 @@
         },
         {
           "name": "entity.name.function.invocation.postcomma.plain",
-          "match": "(?<=(,|;))([\\wÀ-ÿ ])([\\wÀ-ÿ ]*?)(?=(\\b(\\d+|a|an|and|another|about|above|across|after|against|all|alone|along|among|any|anywhere|around|as|at|away|back|backward|backwards|before|beginning|behind|below|beneath|beside|between|beyond|bigger|both|but|by|called|close|deep|diagonally|down|downward|either|equal|ending|everywhere|except|finishing|facing|for|forward|from|given|giving|high|in|inside|into|larger|leaning|left|leftward|leftways|like|limiting|long|near|neither|nor|of|off|on|only|onto|or|out|outside|over|past|pointing|returning|right|rightward|rightways|shorter|sideway|sideways|similar|smaller|some|somewhere|slantwise|slantway|slantways|starting|tall|taller|the|thru|through|throughout|to|toward|towards|under|underneath|until|unto|up|upward|upon|using|via|while|wide|with|within|without)\\b|\"|;|\\(|(\\$[a-fA-F\\d]+)))"
+          "match": "(?<=(,|;))([\\wÀ-ÿ\\- ])([\\wÀ-ÿ\\- ]*?)(?=(\\b(\\d+|a|an|and|another|about|above|across|after|against|all|alone|along|among|any|anywhere|around|as|at|away|back|backward|backwards|before|beginning|behind|below|beneath|beside|between|beyond|bigger|both|but|by|called|close|deep|diagonally|down|downward|either|equal|ending|everywhere|except|finishing|facing|for|forward|from|given|giving|high|in|inside|into|larger|leaning|left|leftward|leftways|like|limiting|long|near|neither|nor|of|off|on|only|onto|or|out|outside|over|past|pointing|returning|right|rightward|rightways|shorter|sideway|sideways|similar|smaller|some|somewhere|slantwise|slantway|slantways|starting|tall|taller|the|thru|through|throughout|to|toward|towards|under|underneath|until|unto|up|upward|upon|using|via|while|wide|with|within|without)\\b|\"|;|\\(|(\\$[a-fA-F\\d]+)))"
         },
         {
           "name": "entity.name.function.struct.member.plain",
@@ -112,8 +112,6 @@
             }
           }
         }
-        
-
       ]
     },
     "keyword": {
@@ -145,30 +143,22 @@
         },
         {
           "name": "keyword.control.verbs.plain",
-          "match": "\\b(?i:(are|be|can|can|could|do|does|exit|is|may|not|should|was|will|would|has|have|begins|ends|looks|needs|starts|Loop|Repeat|repeat|loop|break|return))\\b"
+          "match": "\\b(?i:(are|be|can|can|could|do|does|exit|is|may|not|should|was|will|would|has|have|begins|ends|looks|needs|starts|Loop|Repeat|break|return|say))\\b"
         },
         {
           "name": "keyword.control.punctuation.accessor.plain",
-          "match": "\\b(?i:(falta preencher))\\b"
-        },
+          "match": "\\b(?<=\\w+)'s\\b"
+        },        
         {
-          "name": "keyword.control.adverbios.plain",
-          "match": "\\b(?i:(falta preencher))\\b"
-        },
-        {
-          "name": "keyword.control.substantivos.plain",
-          "match": "\\b(?i:(falta preencher))\\b"
-        },
-        {
-          "name": "keyword.control.operadoresaritmeticos.plain",
+          "name": "keyword.control.arithmeticoperators.plain",
           "match": "\\b(?i:(divided|and|plus|minus|times|neither|or|multiplied))\\b"
         },
         {
-          "name": "keyword.other.operadoresdecomparacao.plain",
-          "match": "\\b(?i:(equal to|bigger|lesser))\\b"
+          "name": "keyword.other.comparisonoperators.plain",
+          "match": "\\b(?i:(equal to|bigger|greater|than|less))\\b"
         },
         {
-          "name": "keyword.other.operadoresdeconcatenacao.plain",
+          "name": "keyword.other.concatenationoperators.plain",
           "match": "\\b(?i:(then))\\b"
         }
       ]
@@ -186,32 +176,31 @@
         {
           "name": "string.quoted.double.plain",
           "begin": "\"",
-          "end": "\"",
-          "patterns": [
-            {
-              "name": "constant.character.escape.plain",
-              "match": "\\\\."
-            }
-          ]
+          "end": "\""
+         
         }
       ]
     },
     "support":{
       "patterns":[
         {
-          "name": "support.type.simples.plain",
-          "match": "(\\b(?<=(A|An|Some|The))\\b)\\s+([\\wÀ-ÿ_\\-\\s\/]*)\\s*(?=\\b(is|are)\\b)"
+          "name": "support.type.simple.plain",
+          "match": "(\\b(?<=(A|An|Some|The))\\b)\\s+([\\wÀ-ÿ_\\-\\s\/]*)\\s*(?=\\b(is|are|has)\\b)"
         },
         {
-          "name": "support.type.aposcolchete.plain",
+          "name": "variable.type.composite.plain",
+          "match": "(\\b(record|thing)\\b)"
+        },
+        {
+          "name": "support.type.aftersquarebracket.plain",
           "match": "((?<=(\\])))\\s+([\\wÀ-ÿ_\\-\\s\/]*)\\s*(?=is|are|has)"
         },
         {
-          "name": "support.type.antesdecolchete.plain",
+          "name": "support.type.beforesquarebracket.plain",
           "match": "(\\b(?<=(A|An|Some|The))\\b)\\s+([\\wÀ-ÿ_\\-\\s\/]*)\\s*(?=(\\[))(?=\\[.*\\b(is|are|has)\\b)"
         },
         {
-          "name": "support.type.entrecolchetes.plain",
+          "name": "support.type.betweensquarebrackets.plain",
           "match": "(?<=(\\]))\\s*([\\wÀ-ÿ_\\-\\s\/]*)\\s*(?=\\[.*\\b(is|are|has)\\b)"
         },
         {
