@@ -2,13 +2,19 @@
   "name": "plain-english-syntax-highlighter",
   "displayName": "Plain English Syntax Highlighter",
   "description": "Provides syntax highlighting for Plain English Programmin Language (from The Osmosian Order of Plain English Programmers -> www.osmosian.com)",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "publisher": "OsmosianOrderofPlainEnglishProgrammers",
   "engines": {
     "vscode": "^1.70.1"
   },
   "categories": [
     "Programming Languages"
   ],
+  "author": {
+    "name": "Elender Góis Gallas",
+    "email": "help@osmosian.com"
+  },
+  "license": "UNLICENSE",
   "contributes": {
     "languages": [
       {
